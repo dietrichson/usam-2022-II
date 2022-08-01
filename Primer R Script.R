@@ -1,0 +1,1 @@
+Soy Matías Salto, estudiante de la Licenciatura en Estudios de la Comunicación. Me encuentro trabajando en una tesis sobre el Subte de Buenos Aires y en una base de datos basados en la publicidad de la Ciudad.
