@@ -1,0 +1,10 @@
+---
+title: "Preseentacion"
+author: "Aleksander Dietrichson"
+format: html
+editor: visual
+---
+
+## Quien soy
+
+Soy Aleksander Dietrichson. Profesor de la UNSAM.
