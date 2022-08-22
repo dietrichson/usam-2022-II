@@ -1,0 +1,60 @@
+---
+title: "Notas 22 de agosto 2022"
+format: html
+editor: visual
+---
+
+## Paquete {arules}
+
+```{r}
+library(tidyverse)
+if(!require(arules)){
+  install.packages("arules")
+  require(arules)
+}
+```
+
+### Ejemplo con «eclat»
+
+```{r}
+data("Adult")
+## Mine itemsets with minimum support of 0.1 and 5 or less items
+itemsets <- eclat(Adult,
+		parameter = list(supp = 0.1, maxlen = 5))
+itemsets
+```
+
+```{r}
+## Create rules from the frequent itemsets
+rules <- ruleInduction(itemsets, confidence = .9)
+rules
+
+```
+
+```{r}
+labels(rules) %>% 
+  head(100) %>% 
+  print
+```
+
+### Ejemplo con «apriori»
+
+```{r}
+data("Adult")
+
+rules <- apriori(Adult,
+	parameter = list(supp = 0.5, conf = 0.9, target = "rules"))
+summary(rules)
+
+```
+
+```{r}
+labels(rules) %>% 
+  head(500) %>% 
+  print
+```
+
+```{r}
+install.packages("arulesViz")
+
+```
