@@ -1,0 +1,30 @@
+---
+title: "Exploración inicial"
+author: "Aleksander Dietrichson"
+date: 2022-09-05
+format: html
+editor: visual
+---
+
+## Proprosito
+
+Este documento fue creado para realizar un analisis exploratorio de los datos de Matias.
+
+```{r setup, include=FALSE}
+library(tidyverse, quietly = TRUE)
+source("connect-to-google-sheet.R")
+```
+
+## Datos
+
+Los datos fueron importados desde googlesheets y corresponden a publidades del subte de año `r my_data$Periodo %>% min()` y `r my_data$Periodo %>% max()` . Consideramos un total de `r nrow(my_data)` observaciones.
+
+```{r datos, echo=FALSE}
+my_data %>% 
+  group_by(Periodo) %>% 
+  tally() %>% 
+  knitr::kable(
+    caption = "Numero de publicidades por año",
+    col.names = c("Año", "Número observado")
+               )
+```

@@ -11,4 +11,4 @@ my_url <- "https://docs.google.com/spreadsheets/d/1SF5DDTEfbQFSNjvYKQnsQKdsBdE7o
 
 my_url2 <- 'https://docs.google.com/spreadsheets/d/1SF5DDTEfbQFSNjvYKQnsQKdsBdE7oJeTywCk92pB7f8/edit#gid=1964221805'
   
-my_data <- googlesheets4::read_sheet(my_url2)
+my_data <- googlesheets4::read_sheet(my_url2,skip = 1)
