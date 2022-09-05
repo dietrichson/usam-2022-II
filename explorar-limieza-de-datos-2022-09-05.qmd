@@ -1,0 +1,56 @@
+---
+title: "Explorar limpieza de datos"
+format: html
+editor: visual
+---
+
+## Proprosito
+
+Este documento fue creado para explorar y descubrir los pasos necesarios de limpieza de datos del google-shhheet que esta disponible online y que contiene los datos de Matias para su tesis.
+
+```{r setup}
+library(tidyverse, quietly = TRUE)
+```
+
+## Importar datos
+
+Para ello hicimos un script.
+
+```{r source-del-script }
+source("connect-to-google-sheet.R")
+# estan en my_data
+```
+
+## Explorar
+
+```{r explorar-1}
+my_data %>% head()
+```
+
+Parece que los nombres estan en a fila numero 1
+
+```{r}
+my_names <- my_data[1,] %>% as.character()
+my_names
+```
+
+Eliminar la fila 1 y asignar nuevos nombres de las columnas
+
+```{r}
+my_data <- my_data[-1,]
+names(my_data) <- my_names
+```
+
+Chequeamos
+
+```{r}
+my_data %>% head()
+```
+
+algo pasa con Año
+
+```{r}
+my_data$`list("Año")`[1]
+```
+
+Mirando esto decidimos cambiar los nombres y empezamos en la linea 2.

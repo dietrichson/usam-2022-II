@@ -18,7 +18,7 @@ No dio buenos resultados asi que intentemos con "skip"
 my_data <- readr::read_csv(path_al_los_datos,skip = 7,skip_empty_rows = TRUE)
 ```
 
-### Masaje de datos 
+### Masaje de datos
 
 ```{r}
 my_data[2:11]
